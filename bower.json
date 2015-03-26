@@ -1,14 +1,13 @@
 {
   "name": "global-events",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/NielsHolt/global-events",
   "authors": [
     "Niels Holt <niels@steenbuchholt.dk>"
   ],
-
-	"description": "Plugin to create and fire global events",
+  "description": "Plugin to create and fire global events",
   "main": [
-  	"dist/global-events.min.js"
+    "dist/global-events.min.js"
   ],
   "license": "MIT",
   "ignore": [
