@@ -26,8 +26,8 @@
   },
   "scripts": {
     "lint": "jshint src/global-events.js",
-    "build": "uglifyjs src/global-events.js -c -m -o dist/global-events.min.js",
-    "prebuild": "npm run lint"
+    "build": "uglifyjs src/global-events.js -c -m -o dist/global-events.min.js"
+
   },
   "repository": {
     "type": "git",
