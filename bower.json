@@ -1,14 +1,23 @@
 {
   "name": "global-events",
-  "version": "1.0.2",
-  "homepage": "https://github.com/NielsHolt/global-events",
+  "version": "1.1.0",
+  "homepage": "https://github.com/FCOO/global-events",
   "authors": [
-    "Niels Holt <niels@steenbuchholt.dk>"
+    "Niels Holt nho@fcoo.dk"
   ],
-  "description": "Plugin to create and fire global events",
+  "description": "",
   "main": [
-    "dist/global-events.min.js"
+    "dist/global-events.min.js",
+    "dist/global-events.min.css"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FCOO/global-events.git"
+  },
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "devDependencies": {},
   "license": "MIT",
   "ignore": [
     "**/.*",

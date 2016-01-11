@@ -1,40 +1,37 @@
 {
   "name": "global-events",
-  "version": "1.0.0",
-  "description": "Plugin to create and fire global events",
-  "main": "dist/global-events.min.js",
-	"author": "Niels Holt <niels@steenbuchholt.dk>",
+  "version": "1.1.0",
+  "description": "package.json is only use for building the package. see bower.json for more info",
+  "author": "Niels Holt nho@fcoo.dk",
   "license": "MIT",
-  "dependencies": {
-    "jquery": "^1.9"
-  },
-
-	"devDependencies": {
-    "jshint": "latest",
-    "uglifyjs": "latest"
+  "devDependencies": {
+    "grunt-bower-concat": "latest",
+    "grunt-continue": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-rename": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-exec": "latest",
+    "grunt-jsonmin": "latest",
+    "grunt-prompt": "latest",
+    "grunt-sass": "latest",
+    "grunt-text-replace": "latest",
+    "load-grunt-tasks": "latest",
+    "main-bower-files": "latest",
+    "semver": "latest",
+    "shelljs": "^0.5.3",
+    "strip-json-comments": "latest",
+    "wordwrap": "^1.0.0"
   },
   "jshintConfig": {
-    "globals": {
-      "L": false,
-      "$": false,
-      "console": false,
-      "DEBUG": false,
-			"document": false
-    },
-    "undef": true,
-    "unused": true
-  },
-  "scripts": {
-    "lint": "jshint src/global-events.js",
-    "build": "uglifyjs src/global-events.js -c -m -o dist/global-events.min.js"
-
+    "jshintrc": true
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NielsHolt/global-events.git"
+    "url": "https://github.com/FCOO/jquery-time-slider.git"
   },
-  "bugs": {
-    "url": "https://github.com/NielsHolt/global-events/issues"
-  },
-  "homepage": "https://github.com/NielsHolt/global-events"
+  "homepage": "https://github.com/FCOO/jquery-time-slider"
 }
