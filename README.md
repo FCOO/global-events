@@ -47,11 +47,11 @@ globalEvents.fire('myEvent', 'THE FIRST ARGUMENT');
 
 ## Installing
 ### bower
-`bower install https://github.com/NielsHolt/global-events.git --save`
+`bower install https://github.com/FCOO/global-events.git --save`
 
 
 
 ## License
-This plugin is licensed under the [MIT license](https://github.com/NielsHolt/global-events/LICENSE).
+This plugin is licensed under the [MIT license](https://github.com/FCOO/global-events/LICENSE).
 
-Copyright (c) 2015 [Niels Holt](https://github.com/NielsHolt)
+Copyright (c) 2015 [FCOO](https://github.com/FCOO)
