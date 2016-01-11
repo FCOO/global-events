@@ -27,7 +27,7 @@ Plugin to administrate any events
 ```globalEvents.trigger``` same as ```fire```
 
 
-### Exsample
+###  Example
 ```
 var globalEvents = new GlobalEvents();
 globalEvents.on('myEvent', function( arg1 ){ alert('Hello from '+arg1); } );
