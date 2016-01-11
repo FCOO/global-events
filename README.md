@@ -32,7 +32,9 @@ http://FCOO.github.io/global-events/demo/
 ```off(eventName, callback, context);``` remove the function from the event ```eventName```
 
 ```one(...)``` same as ```once(...)```
+
 ```oneFirst(...)``` same as ```onceFirst(...)```
+
 ```oneLast(...)``` same as ```onceLast(...)```
 
 #### Fire/trigger a event
