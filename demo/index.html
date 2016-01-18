@@ -19,14 +19,15 @@
 
 <body>
 	<p>var globalEvents = new GlobalEvents();</p>
-	<p>globalEvents.on('myEvent', function( arg1 ){ alert('Hello from '+arg1); } );</p>
-	<p>globalEvents.onLast('myEvent', function( arg1 ){ alert('Last hello from '+arg1); } );</p>
-	<p>globalEvents.onFirst('myEvent', function( arg1 ){ alert('First hello from '+arg1); } );</p>
-	<p>globalEvents.once('myEvent', function( arg1 ){ alert('Only one hello from '+arg1); } );</p>
+	<p>globalEvents.on('myEvent myOtherEvent', function( arg1 ){ alert('Hello from '+arg1); } );</p>
+	<p>globalEvents.onLast('myEvent myOtherEvent', function( arg1 ){ alert('Last hello from '+arg1); } );</p>
+	<p>globalEvents.onFirst('myEvent myOtherEvent', function( arg1 ){ alert('First hello from '+arg1); } );</p>
+	<p>globalEvents.once('myEvent myOtherEvent', function( arg1 ){ alert('Only one hello from '+arg1); } );</p>
 	<p>var f = function( arg1 ){ alert('NEVER hello from '+arg1); };</p>
 	<p>globalEvents.on('myEvent', f );</p>
 	<p>globalEvents.off('myEvent', f );</p>
-	<button onclick="globalEvents.fire('myEvent', 'THE FIRST ARGUMENT')">Click me to fire('myEvents', 'THE FIRST ARGUMENT')!</button>
+	<button onclick="globalEvents.fire('myEvent', 'MY-EVENT')">Click me to fire('myEvents', 'MY-EVENT')!</button>
+	<button onclick="globalEvents.fire('myOtherEvent', 'MY-OTHER-EVENT')">Click me to fire('myOtherEvent', 'MY-OTHER-EVENT')!</button>
 
 	
 	
@@ -34,10 +35,10 @@
 	<script src="../src/global-events.js"></script>
 	<script>
 		var globalEvents = new GlobalEvents();
-		globalEvents.on('myEvent', function( arg1 ){ alert('Hello from '+arg1); } );
-		globalEvents.onLast('myEvent', function( arg1 ){ alert('Last hello from '+arg1); } );
-		globalEvents.onFirst('myEvent', function( arg1 ){ alert('First hello from '+arg1); } );
-		globalEvents.once('myEvent', function( arg1 ){ alert('Only one hello from '+arg1); } );
+		globalEvents.on('myEvent myOtherEvent', function( arg1 ){ alert('Hello from '+arg1); } );
+		globalEvents.onLast('myEvent myOtherEvent', function( arg1 ){ alert('Last hello from '+arg1); } );
+		globalEvents.onFirst('myEvent myOtherEvent', function( arg1 ){ alert('First hello from '+arg1); } );
+		globalEvents.once('myEvent myOtherEvent', function( arg1 ){ alert('Only one hello from '+arg1); } );
 		var f = function( arg1 ){ alert('NEVER hello from '+arg1); };
 		globalEvents.on('myEvent', f );
 		globalEvents.off('myEvent', f );

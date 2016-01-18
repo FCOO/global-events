@@ -29,14 +29,20 @@
 			}
 		};
 
-		this.on = function on(eventName, callback, context, options){
-			this.events[eventName] = this.events[eventName] || []; 		
-			this.events[eventName].push( {
-				callback: callback,
-				context	: context || null,
-				options	: $.extend( {once:false, first:false, last:false}, options ) 
-			});
-		
+		this.on = function on(eventNames, callback, context, options){
+			var eventName, i;
+			eventNames = ( eventNames || "" ).match( (/\S+/g) ) || [ "" ];
+			for (i=0; i<eventNames.length; i++ ){
+				eventName = eventNames[i];
+				if (eventName){
+					this.events[eventName] = this.events[eventName] || []; 		
+					this.events[eventName].push( {
+						callback: callback,
+						context	: context || null,
+						options	: $.extend( {once:false, first:false, last:false}, options ) 
+					});
+				}
+			}
 		};
 
 		this.once				= function once(			eventName, callback, context ) { this.on( eventName, callback, context, {	once:true 						} ); };
@@ -45,14 +51,23 @@
 		this.onceFirst	= function onceFirst(	eventName, callback, context ) { this.on( eventName, callback, context, { once:true, first:true	} ); };
 		this.onceLast		= function onceFirst(	eventName, callback, context ) { this.on( eventName, callback, context, { once:true, last:true	} ); };
 
-		this.off = function off(eventName, callback, context){
-			this._loop( eventName, function( eventObj, index, list ){
+		this.off = function off(eventNames, callback, context){
+			var eventName, i, _loop_func;
+			eventNames = ( eventNames || "" ).match( (/\S+/g) ) || [ "" ];
+			_loop_func = function( eventObj, index, list ){
 				if ( (callback == eventObj.callback) &&
-						 (!context || (context == eventObj.context)) ){ 
+					(!context || (context == eventObj.context)) ){ 
 					list.splice(index, 1);
 					return true;
 				}
-			});
+			};
+
+			for (i=0; i<eventNames.length; i++ ){
+				eventName = eventNames[i];
+				if (eventName){
+					this._loop( eventName, _loop_func );
+				}
+			}
 		};
 
 
