@@ -17,19 +17,21 @@ http://FCOO.github.io/global-events/demo/
 ### Methods
 
 #### Adding events
-```on(eventName, callback, context);``` will add a function to the event ```eventName```
+`eventNames` = string with the name or names (seperated by space) of the event(s)
 
-```once(eventName, callback, context);``` will add a function to the event ```eventName``` that will only be fired/triged once
+```on(eventNames, callback, context);``` will add a function to the event(s) ```eventNames```
 
-```onFirst(eventName, callback, context);``` will add a function to the event ```eventName```. The function wil be called first when the event is fired
+```once(eventNames, callback, context);``` will add a function to the event(s) ```eventNames``` that will only be fired/triged once
 
-```onLast(eventName, callback, context);``` will add a function to the event ```eventName```. The function wil be called last when the event is fired
+```onFirst(eventNames, callback, context);``` will add a function to the event(s) ```eventNames```. The function wil be called first when the event is fired
 
-```onceFirst(eventName, callback, context);``` will add a function to the event ```eventName```. The function will be called first when the event is fired but only once
+```onLast(eventNames, callback, context);``` will add a function to the event(s) ```eventNames```. The function wil be called last when the event is fired
 
-```onceLast(eventName, callback, context);``` will add a function to the event ```eventName```. The function wil be called last when the event is fired but only once
+```onceFirst(eventNames, callback, context);``` will add a function to the event(s) ```eventNames```. The function will be called first when the event is fired but only once
 
-```off(eventName, callback, context);``` remove the function from the event ```eventName```
+```onceLast(eventNames, callback, context);``` will add a function to the event(s) ```eventNames```. The function wil be called last when the event is fired but only once
+
+```off(eventNames, callback, context);``` remove the function from the event(s) ```eventNames```
 
 ```one(...)``` same as ```once(...)```
 
@@ -48,10 +50,10 @@ http://FCOO.github.io/global-events/demo/
 #### Adding events
 ```
 var globalEvents = new GlobalEvents();
-globalEvents.on('myEvent', function( arg1 ){ alert('Hello from '+arg1); } );
-globalEvents.onLast('myEvent', function( arg1 ){ alert('Last hello from '+arg1); } );
-globalEvents.onFirst('myEvent', function( arg1 ){ alert('First hello from '+arg1); } );
-globalEvents.once('myEvent', function( arg1 ){ alert('Only one hello from '+arg1); } );
+globalEvents.on('myEvent myOtherEvent', function( arg1 ){ alert('Hello from '+arg1); } );
+globalEvents.onLast('myEvent myOtherEvent', function( arg1 ){ alert('Last hello from '+arg1); } );
+globalEvents.onFirst('myEvent myOtherEvent', function( arg1 ){ alert('First hello from '+arg1); } );
+globalEvents.once('myEvent myOtherEvent', function( arg1 ){ alert('Only one hello from '+arg1); } );
 var f = function( arg1 ){ alert('NEVER hello from '+arg1); };
 globalEvents.on('myEvent', f );
 globalEvents.off('myEvent', f );
@@ -59,8 +61,8 @@ globalEvents.off('myEvent', f );
 
 #### Fire the event
 ```
-globalEvents.fire('myEvent', 'THE FIRST ARGUMENT');
-
+globalEvents.fire('myEvent', 'MY-EVENT');
+globalEvents.fire('myOtherEvent', 'MY-OTHER-EVENT');
 ```
 
 
