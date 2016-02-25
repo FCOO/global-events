@@ -1,14 +1,13 @@
 {
   "name": "global-events",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "https://github.com/FCOO/global-events",
   "authors": [
     "Niels Holt nho@fcoo.dk"
   ],
   "description": "",
   "main": [
-    "dist/global-events.min.js",
-    "dist/global-events.min.css"
+    "dist/global-events.min.js"
   ],
   "repository": {
     "type": "git",
