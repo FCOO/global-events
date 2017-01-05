@@ -30,7 +30,8 @@
         };
 
         this.on = function(eventNames, callback, context, options){
-            var i, eventName = ( eventNames || "" ).match( (/\S+/g) ) || [ "" ];
+			var eventName, i;
+			eventNames = ( eventNames || "" ).match( (/\S+/g) ) || [ "" ];
             for (i=0; i<eventNames.length; i++ ){
                 eventName = eventNames[i];
                 if (eventName){
