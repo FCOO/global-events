@@ -14,7 +14,6 @@
 	<meta name='copyright' content='FCOO'>
 	<meta name='owner' content='FCOO'>
 
-  <link  href="bower_components.css" rel="stylesheet">	
 </head>
 
 <body>
@@ -28,6 +27,7 @@
 	<p>globalEvents.off('myEvent', f );</p>
 	<button onclick="globalEvents.fire('myEvent', 'MY-EVENT')">Click me to fire('myEvents', 'MY-EVENT')!</button>
 	<button onclick="globalEvents.fire('myOtherEvent', 'MY-OTHER-EVENT')">Click me to fire('myOtherEvent', 'MY-OTHER-EVENT')!</button>
+	<button onclick="globalEvents.fire('myEvent myOtherEvent', 'BOTH-MY-EVENTS')">Click me to fire('myEvents myOtherEvent', 'BOTH-MY-EVENTS')!</button>
 
 	
 	

@@ -39,9 +39,9 @@ http://FCOO.github.io/global-events/demo/
 
 ```oneLast(...)``` same as ```onceLast(...)```
 
-#### Fire/trigger a event
+#### Fire/trigger a event/events
 
-```globalEvents.fire(eventName [,arg1, arg2,.., argN]);``` fire/trigger the event ```eventName```
+```globalEvents.fire(eventNames [,arg1, arg2,.., argN]);``` fire/trigger the event(s) ```eventNames```
 
 ```globalEvents.trigger``` same as ```fire```
 

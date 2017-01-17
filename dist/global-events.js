@@ -14,18 +14,25 @@
     function GlobalEvents( ) {
         this.events = {};
 
-        this._loop = function( eventName, func, reverse ){
-            this.events[eventName] = this.events[eventName] || [];         
-            var i, lgd = this.events[eventName].length;
-            if (reverse){
-                for (i=lgd-1; i>=0; i-- )
-                    if (func( this.events[eventName][i], i, this.events[eventName] ))
-                        break;
-            } 
-            else {
-                for (i=0; i<lgd; i++ )
-                    if (func( this.events[eventName][i], i, this.events[eventName] ))
-                        break;
+        this._loop = function( eventNames, func, reverse ){
+			var eventName, j;
+			eventNames = ( eventNames || "" ).match( (/\S+/g) ) || [ "" ];
+            for (j=0; j<eventNames.length; j++ ){
+                eventName = eventNames[j];
+                if (eventName){
+                    this.events[eventName] = this.events[eventName] || [];         
+                    var i, lgd = this.events[eventName].length;
+                    if (reverse){
+                        for (i=lgd-1; i>=0; i-- )
+                            if (func( this.events[eventName][i], i, this.events[eventName] ))
+                                break;
+                    } 
+                    else {
+                        for (i=0; i<lgd; i++ )
+                            if (func( this.events[eventName][i], i, this.events[eventName] ))
+                                break;
+                    }
+                }
             }
         };
 
